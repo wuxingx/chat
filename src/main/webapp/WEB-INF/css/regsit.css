@@ -1,0 +1,11 @@
+.formtips{width: 200px;margin:2px;padding:2px;}
+.onError{
+    color: red;
+    background: url("../img/0x2716.png") no-repeat 0 center;
+    padding-left:25px;
+}
+.onSuccess{
+    color: green;
+    background: url("../img/0x2714.png") no-repeat 0 center;
+    padding-left:25px;
+}

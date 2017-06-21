@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wuxing.chat.dao.IDirtyDAO" >
+  <resultMap id="BaseResultMap" type="com.wuxing.chat.pojo.Dirty" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="word" property="word" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, word
+  </sql>
+</mapper>

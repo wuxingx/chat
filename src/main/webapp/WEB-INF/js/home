@@ -1,0 +1,39 @@
+// 绑定事件
+window.onload = function() {
+	document.onkeydown = function(obj) {
+		if (obj.keyCode == 13) { // enter 键
+			sendMessage();
+			return false; // 不显示回车效果
+		}
+	};
+
+	setInterval("getMessage()", 1000);
+}
+
+function sendMessage() {
+	var msg = document.getElementById("msg").value;
+	if (msg.length < 1) {
+		alert("消息不能为空");
+		return;
+	}
+	$.post("${ pageContext.request.contextPath }/SendMessageServlet", {
+		"msg" : msg
+	}, function(data) {// 回调函数
+		document.getElementById("msg").value = "";
+		alert("发送成功");
+	});
+}
+
+function getMessage() {
+	$.post("${ pageContext.request.contextPath }/FindAllMessageServlet",
+		function(data) {// 回调函数
+			var div = document.getElementById("msg-div");
+			div.innerHTML = "";
+			for (var i = 0; i < data.length; i++) {
+				div.innerHTML += "<b style='color:green;'>【" + data[i].date
+						+ "】【" + data[i].username + "】</b> " + data[i].msg
+						+ "<br/>";
+			}
+		div.scrollTop = div.scrollHeight;// div 的滚动条自动到最底部
+	}, "json");
+}

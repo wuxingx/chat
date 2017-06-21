@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wuxing.chat.dao.IPrivateRecordDAO" >
+  <resultMap id="BaseResultMap" type="com.wuxing.chat.pojo.PrivateRecord" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_info_id" property="userInfoId" jdbcType="INTEGER" />
+    <result column="private_room_id" property="privateRoomId" jdbcType="INTEGER" />
+    <result column="send_time" property="sendTime" jdbcType="TIMESTAMP" />
+    <result column="msg" property="msg" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, user_info_id, private_room_id, send_time, msg
+  </sql>
+</mapper>

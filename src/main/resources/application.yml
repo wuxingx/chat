@@ -1,0 +1,28 @@
+spring:
+  profiles:
+    active: prod
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://104.238.150.117:3306/chat?characterEncoding\=UTF8&zeroDateTimeBehavior\=convertToNull
+    username: root
+    password:
+  session:
+    store-type: none
+  mvc:
+    view:
+      #文件前置
+      prefix: /WEB-INF/jsp/
+      #文件后缀
+      suffix: .jsp
+      ## Freemarker 配置
+      ## 文件配置路径
+  freemarker:
+    template-loader-path: classpath:/WEB-INF/
+    cache: false
+    charset: utf-8
+    check-template-location: true
+    content-type: text/html
+    expose-request-attributes: true
+    expose-session-attributes: true
+    request-context-attribute: request
+    suffix: .ftl
